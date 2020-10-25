@@ -120,4 +120,23 @@ const categories = (arr) => {
   return cats;
 };
 
-console.log('categories', categories(arr));
+const allCats = categories(arr2);
+
+console.log('categories', allCats);
+
+const app = document.getElementById('app');
+
+const drawCategories = (arr) => {
+  let ul = document.createElement('ul');
+
+  for(let cat of arr){
+
+    let li = document.createElement('li');
+    li.textContent = cat.title;
+    li.append(drawCategories(cat.childrens));
+    ul.append(li);
+
+  }
+  return ul;
+};
+app.append(drawCategories(allCats));
