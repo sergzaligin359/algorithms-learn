@@ -55,22 +55,40 @@ const arr = [
 
   {
     id: 2,
-    title: 'SubCategory',
+    title: 'SubMainCategory',
+    parentId: 1,
+  },
+  {
+    id: 7,
+    title: 'SubMainCategory',
     parentId: 1,
   },
 
   {
     id: 3,
-    title: 'SubSubCategory',
+    title: 'SubSubMainCategory',
     parentId: 2,
   },
 
   {
     id: 4,
-    title: 'SubSubSubCategory',
+    title: 'SubSubSubMainCategory',
     parentId: 3,
   },
+
+  {
+    id: 5,
+    title: 'SecondCategory',
+    parentId: 0,
+  },
+
+  {
+    id: 6,
+    title: 'SubSecondCategory',
+    parentId: 5,
+  },
 ]
+
 const subCat = (item, arr) => {
   if(!item) return;
   for(val of arr) {
