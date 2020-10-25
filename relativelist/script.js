@@ -127,10 +127,10 @@ console.log('categories', allCats);
 const app = document.getElementById('app');
 
 const drawCategories = (arr) => {
+  if(!arr.length) return '';
   let ul = document.createElement('ul');
 
   for(let cat of arr){
-
     let li = document.createElement('li');
     li.textContent = cat.title;
     li.append(drawCategories(cat.childrens));
@@ -139,4 +139,5 @@ const drawCategories = (arr) => {
   }
   return ul;
 };
+
 app.append(drawCategories(allCats));
